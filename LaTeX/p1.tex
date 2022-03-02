@@ -69,7 +69,7 @@
 
 \bigskip
 
-\textbf{Resumen:} En el presente trabajo se presentan 2 algoritmos, de los cuales veremos su funcionamiento, adem\'as, haremos un an\'alisis a posteriori, es decir, el an\'alisis experimental, de la complejidad temporal de dichos algoritmos. Esto se har\'a mediante el uso de un contador, en el c\'odigo implementado del algoritmo, para contar cada operaci\'on realizada por el algoritmo que se est\'e midiendo, 
+\textbf{Resumen:} En el presente trabajo se presentan 2 algoritmos, de los cuales veremos su funcionamiento, adem\'as, haremos un an\'alisis a $posteriori$, es decir, el an\'alisis experimental, de la complejidad temporal de dichos algoritmos. Esto se har\'a mediante el uso de un contador, en el c\'odigo implementado del algoritmo, para contar cada operaci\'on realizada por el algoritmo que se est\'e midiendo, 
 m\'as tarde, mediante el uso de gr\'aficas obtendremos una representaci\'on del tiempo que tardan en ejecutarse dichos algoritmos. Para desarrollar cada gr\'afica, evaluaremos algunos puntos, y buscaremos una funci\'on que acote dichos puntos por arriba o, dependiendo del caso, por abajo.
 Estas funciones ser\'an las funciones de complejidad temporal de los algoritmos.
 
@@ -219,12 +219,12 @@ posteriormente guarda en una variable $r$ el residuo de la divisi\'on entre $m$ 
 Por ejemplo con la intancia $m=34$, $n=21$, la soluci\'on es 1, puesto que son primos relativos. Por lo tanto el algoritmo empieza en un ciclo donde inicilamente $r=0$, $m=34$, y $n=21$; en la 1ra iteraci\'on $r=13$, $m=21$, y $n=13$, en la 2nda iteraci\'on $r=8$, $m=13$, $n=8$, en la 3ra iteraci\'on $r=5$, $m=8$, y $n=5$, en la 4ta iteraci\'on $r=3$, $m=5$, y $n=3$, en la 5ta iteraci\'on $r=2$, $m=3$ y $n=2$, en la 6ta iteraci\'on $r=1$, $m=2$, y $n=1$, y por \'ultimo en la 7ma iteraci\'on $r=0$, $m=1$, y $n=0$, por lo tanto deja de iterar, y nuestro $mcd$ es igual a 1, recordemos que el m\'aximo com\'un divisor, es el n\'umero m\'as grande que divide a ambos n\'umeros sin dejar residuo.
 \newline
 \newline 
-Podemos observar que ambos algoritmos son correctos, así que procedemos a checar su eficiencia, haciendo un análisis a $posteriori$ de los mismos.
+Podemos observar que ambos algoritmos son correctos, as\'i que procedemos a checar su eficiencia, haciendo un an\'alisis a $posteriori$ de los mismos.
 
 \section{Experimentaci\'on y Resultados}
 
-Para nuestro primer algoritmo el tamaño del problema es el tamaño del arreglo donde buscaremos al elemento en los subarreglos. Así que checaremos cu\'antas operaciones realiza nuestro algoritmo dependiendo del valor de $tam$, al que vamos a restringir a n\'umeros pares, tanto para el mejor caso, como para el peor caso; como previamente discutimos, el mejor caso se encuentra cuando el valor en la primera posición de ambos subarreglos es igual, sin embargo, para poder definir cu\'al es el peor caso deberemos de checar m\'as a detalle la implementaci\'on del algoritmo, puesto que existe la opci\'on de que el peor caso sea que no exista un elemento que cumpla que est\'e en ambos subarreglos, sin embargo,
-tambi\'en puede ser que el peor caso, sea cuando el valor que se repite est\'a en las últimas posiciones de los subarreglos. Así que nos apoyaremos del an\'alisis a $posteriori$ para determinar cu\'al es el peor caso, y adem\'as saber cu\'al es la funci\'on que lo acota, es decir, su funci\'on de complejidad temporal.
+Para nuestro primer algoritmo el tamaño del problema es el tamaño del arreglo donde buscaremos al elemento en los subarreglos. As\'i que checaremos cu\'antas operaciones realiza nuestro algoritmo dependiendo del valor de $tam$, al que vamos a restringir a n\'umeros pares, tanto para el mejor caso, como para el peor caso; como previamente discutimos, el mejor caso se encuentra cuando el valor en la primera posici\'on de ambos subarreglos es igual, sin embargo, para poder definir cu\'al es el peor caso deberemos de checar m\'as a detalle la implementaci\'on del algoritmo, puesto que existe la opci\'on de que el peor caso sea que no exista un elemento que cumpla que est\'e en ambos subarreglos, sin embargo,
+tambi\'en puede ser que el peor caso, sea cuando el valor que se repite est\'a en las \'ultimas posiciones de los subarreglos. As\'i que nos apoyaremos del an\'alisis a $posteriori$ para determinar cu\'al es el peor caso, y adem\'as saber cu\'al es la funci\'on que lo acota, es decir, su funci\'on de complejidad temporal.
 \newline
 \newline
 Para el segundo algoritmo definiremos como tamaño del problema a nuestro n\'umero $m$, ya que en particular para el peor caso estaremos checando n\'umeros consecutivos de la sucesi\'on de Fibonacci, de tal manera que m ser\'a el mayor de estos 2 n\'umeros, y vamos a checar cu\'antas operaciones realiza dadas estas condiciones.
@@ -324,21 +324,23 @@ As\'i podemos observar que el peor caso es cuando no existen valores iguales en 
 Con esta informaci\'on vamos a proponer funciones que pasen por la mayor cantidad de puntos, o que los acoten, y diremos que esa es su $T(n)$, para posteriormente graficar el n\'umero de operaciones v.s.\ $n$.
 \newline
 \newline
-Para el mejor caso, propondremos la funci\'on $f(n) = 10$, y para el peor caso proponemos $f(n) = 7n$.
-\newpage
+Entonces las $T(n)$ para el algoritmo de b\'usqueda en subarreglos quedan: para el mejor caso, propondremos la funci\'on $f(n) = 11$, y para el peor caso proponemos $f(n) = 7n$.
+\\ Veremos como se comporta de manera gr\'afica nuestro algoritmo en el mejor caso:
 \begin{figure}[h]
     \vspace{3cm} \hspace{-2cm} \setlength{\unitlength}{1mm}
         \begin{picture}(15,25)(-35,0)
-            \includegraphics[width=10cm,height=5cm]{subarreglo_mc.png}
+            \includegraphics[width=10cm,height=5cm]{subarray_bc.png}
         \end{picture}
     \end{figure}
     \vspace{-1cm}
     \begin{center}
-        Figura 2. Gr\'afica de la funci\'on $f(n) = 10$
+        Figura 2. Gr\'afica de la funci\'on $f(n) = 11$
     \end{center}
     \medskip
-Ya que todos los puntos quedan por encima de la funci\'on $f(n) = 10$ podemos decir que la $T(n)$ para el mejor caso de  BusquedaEnSubArreglo, es: $f(n) = 11 \in \Omega(1)$.
-
+Podemos observar que todo los puntos pasan por $f(n) = 11$. Ahora, de la definici\'on de la notaci\'on $\Omega$:
+\\ Necesitamos encontrar un $c_1 \le 11$  $\forall n \geq n_1$, de ah\'i que:
+\\ $10(1) \le 11 $ $\forall n \geq 1$, entonces $c_1 = 10$, $g(n)=1$, y $n_1=1$ $\therefore$ $f(n)=11 \in \Omega(1)$.
+\\ Ahora veremos que pasa para el peor caso:
 \begin{figure}[h]
     \vspace{3cm} \hspace{-2cm} \setlength{\unitlength}{1mm}
         \begin{picture}(15,25)(-35,0)
@@ -350,7 +352,9 @@ Ya que todos los puntos quedan por encima de la funci\'on $f(n) = 10$ podemos de
         Figura 3. Gr\'afica de la funci\'on $f(n) = 7n$
     \end{center}
     \medskip
-Ya que todos los puntos quedan por debajo de la funci\'on $f(n) = 7n$ podemos decir que la $T(n)$ para el peor caso de  BusquedaEnSubArreglo, es: $f(n) = 7n \in O(n)$.
+    Podemos observar que algunos puntos pasan por $f(n) = 7n$ y los dem\'as quedan acotados por arriba. Ahora, de la definici\'on de la notaci\'on $O$:
+    \\ Necesitamos encontrar un $c_1g(n) \geq 7n$  $\forall n \geq n_1$, de ah\'i que:
+    \\ $7n \le 8n $ $\forall n \geq 1$, entonces $c_1 = 8$, $g(n)=n$, y $n_1=1$ $\therefore$ $f(n)=7n \in O(n)$.
 \newpage
 Por \'ultimo veremos el funcionamiento del algoritmo de Euclides:
 \begin{figure}[h]
@@ -388,7 +392,7 @@ Ahora analizaremos los resultados experimentales arrojados por el algoritmo de E
     \end{center}
 \end{table}
 
-Para el peor caso de euclides proponemos la funci\'on $f(n) = 18 log_2(n)$.
+Para el peor caso de euclides proponemos para $T(n)$ la funci\'on $f(n) = 18 log_2(n)$.
 \newpage
 \begin{figure}[h]
     \vspace{3cm} \hspace{-2cm} \setlength{\unitlength}{1mm}
@@ -396,17 +400,18 @@ Para el peor caso de euclides proponemos la funci\'on $f(n) = 18 log_2(n)$.
             \includegraphics[width=10cm,height=5cm]{Euclides-plot.png}
         \end{picture}
     \end{figure}
-    \vspace{-1cm}
+    \vspace{-0.8cm}
     \begin{center}
         Figura 5. Gr\'afica de la funci\'on $f(n) = 18 log_2(n)$
     \end{center}
-    \medskip
-    Ya que todos los puntos quedan por debajo de la funci\'on $f(n) = 18log_2(n)$ podemos decir que la $T(n)$ para el peor caso del algoritmo de Euclides, es: $f(n) = 18 log_2(n) \in O(nlog(n))$.
-
+    \bigskip
+Podemos observar que algunos puntos pasan por $f(n) = 18log_2(n)$ y los dem\'as quedan acotados por arriba. Ahora, de la definici\'on de la notaci\'on $O$:
+    \\ Necesitamos encontrar un $c_1g(n) \geq 18log_2(n)$  $\forall n \geq n_1$, de ah\'i que:
+    \\ $18log_2(n) \le 19log_2(n) $ $\forall n \geq 2$, entonces $c_1 = 19$, $g(n)=log_2(n)$, y $n_1=2$ $\therefore$ $f(n)=18log_2(n) \in O(log_2(n))$.
 \section{Conclusiones}
 \textbf{Conclusi\'on General}
 \newline
-Para esta pr\'actica uno de los problemas que se present\'o fue que el algoritmo inicialmente planteado para el 1er problema era de complejidad cuadr\'atica, debido a esto, un an\'alisis m\'as completo fue necesario para poder tener una mejor complejidad, para ello fue necesario checar si un mapeo hash resolv\'ia el problema, y de esto surgi\'o el problema de encontrar una funci\'on hash 
+Uno de los problemas que se present\'o fue que la complejidad para el 1er algoritmo era cuadr\'atica, pero no se estuvo satisfecho con ese rendimiento, debido a esto, fue necesario checar si un mapeo hash resolv\'ia el problema, y de esto surgi\'o el problema de encontrar una funci\'on hash 
 que se adecuara a nuestra situaci\'on, as\'i que se opt\'o por la funci\'on hash de identidad, aunque esta funciona bien solo para valores pequeños, as\'i que quiz\'as una manera de poder mejorar este algoritmo ser\'ia el de implementar una mejor funci\'on hash, que sea m\'as general, aunque independientemente de eso, pudimos observar que nuestro algoritmo es correcto, por lo tanto se tuvieron los 
 resultados esperados, y ahora con una complejidad lineal, as\'i que se logr\'o mejorar la eficiencia del algoritmo; aunque es posible que para cuando no se encuntren valores repetidos en los subarreglos, se podr\'ia a\'un mejorar la cantidad de operaciones, pero seguir\'ia siendo lineal. Otra duda que surgi\'o era el qu\'e suced\'ia si nuestro algoritmo no encontraba un elemento con las caracter\'isticas que nos solicitaban, as\'i que se opt\'o por inicializar todas nuestras variables auxiliares con -1, y si no se modificaban, entonces simplemente no mostraba nada, pero se deten\'ia de todos modos.
 Para el segundo algoritmo surgieron dudas de realmente cu\'al era la funci\'on que acotaba por arriba nuestros puntos, pero despu\'es de analizar puntos fuera del peor caso, y checar m\'as puntos, nos dimos cuenta de que la funci\'on ten\'ia un comportamiento parecido al logar\'itmico.
@@ -418,7 +423,7 @@ Para el segundo algoritmo surgieron dudas de realmente cu\'al era la funci\'on q
 \end{wrapfigure} 
 
 En particular de los algoritmos que se checaron en esta pr\'actica, del 1ro me llam\'o mucho la atenci\'on el 
-poder analizar un algoritmo que aunque ya es correcto, no quedas satisfecho con su desempeño, y por lo tanto regresar a la fase de diseñar el algoritmo, y checar como optimizarlo, fue muy interesante. Además de poder pensarlo en casos, tambi\'en ayud\'o a quitar complejidad innecesaria del algoritmo. Del segundo algoritmo, me llam\'o mucho la atenci\'on que justo el peor caso para calcular el mcd de 2 n\'umeros sea cuando cumplan la propiedad de que sean primos relativos, y que justo 2
+poder analizar un algoritmo que aunque ya es correcto, no quedas satisfecho con su desempeño, y por lo tanto regresar a la fase de diseñar el algoritmo, y checar como optimizarlo, fue muy interesante. Adem\'as de poder pensarlo en casos, tambi\'en ayud\'o a quitar complejidad innecesaria del algoritmo. Del segundo algoritmo, me llam\'o mucho la atenci\'on que justo el peor caso para calcular el mcd de 2 n\'umeros sea cuando cumplan la propiedad de que sean primos relativos, y que justo 2
 n\'umeros consecutivos de la sucesi\'on de Fibonacci cumplan esta propiedad, me pareci\'io incre\'ible.
 
 \section{Anexo}
